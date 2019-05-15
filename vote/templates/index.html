@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rezervare</title>
+    <base href="/index.html">
+    <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+    <meta name="keywords" content="docker-compose, docker, stack">
+    <meta name="author" content="Tutum dev team">
+    <link rel='stylesheet' href="{{ url_for('static',filename='stylesheets/style.css') }}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+  <body>
+     <div id="content-container">
+      <div id="content-container-center">
+        <h1>Comandă mâncare</h1>
+        <br><br>
+        <h3> Alegeți tipul de mâncare</h3>
+        <form >
+          <input type="radio" name="foodType" value="main" checked> Fel principal<br>
+          <input type="radio" name="foodType" value="breakfast"> Mic dejun<br>
+          <input type="radio" name="foodType" value="dessert"> Desert<br>
+        </form> <br><br>
+        <h3> Alegeţi felul de mâncare</h3>
+        <form id="choice" name='form' method="POST" action="/">
+          <div>
+            <p>Mic dejun</p>
+            <button id="a" type="submit" name="vote" class="a md" value="a">{{option_a}}</button>
+            <button id="b" type="submit" name="vote" class="b md" value="b">{{option_b}}</button>
+            <button id="c" type="submit" name="vote" class="c md" value="c">{{option_c}}</button>
+            <button id="d" type="submit" name="vote" class="d md" value="d">{{option_d}}</button>
+          </div>
+          <br>
+          <div>
+            <p> Fel principal </p>
+            <button id="e" type="submit" name="vote" class="e pr" value="e">{{option_e}}</button>
+            <button id="f" type="submit" name="vote" class="f pr" value="f">{{option_f}}</button>
+            <button id="g" type="submit" name="vote" class="g pr" value="g">{{option_g}}</button>
+            <button id="h" type="submit" name="vote" class="h pr" value="h">{{option_h}}</button>
+            <button id="i" type="submit" name="vote" class="i pr" value="i">{{option_i}}</button>
+            <button id="j" type="submit" name="vote" class="j pr" value="j">{{option_j}}</button>
+            <button id="k" type="submit" name="vote" class="k pr" value="k">{{option_k}}</button>
+            <button id="l" type="submit" name="vote" class="l pr" value="l">{{option_l}}</button>
+            <button id="m" type="submit" name="vote" class="m pr" value="m">{{option_m}}</button>
+            <button id="n" type="submit" name="vote" class="n pr" value="n">{{option_n}}</button>
+            <button id="o" type="submit" name="vote" class="o pr" value="o">{{option_o}}</button>
+          </div>
+          <br>
+          <div>
+            <p> Desert </p>
+              
+              <button id="p" type="submit" name="vote" class="p ci" value="p">{{option_p}}</button>
+              <button id="r" type="submit" name="vote" class="r ci" value="r">{{option_r}}</button>
+              <button id="q" type="submit" name="vote" class="q ci" value="q">{{option_q}}</button>
+              <button id="s" type="submit" name="vote" class="s ci" value="s">{{option_s}}</button>
+              <button id="t" type="submit" name="vote" class="t ci" value="t">{{option_t}}</button>
+              <button id="u" type="submit" name="vote" class="u ci" value="u">{{option_u}}</button>
+              <button id="v" type="submit" name="vote" class="v ci" value="v">{{option_v}}</button>
+              <button id="w" type="submit" name="vote" class="w ci" value="w">{{option_w}}</button>
+              <button id="x" type="submit" name="vote" class="x ci" value="x">{{option_x}}</button>
+              <button id="y" type="submit" name="vote" class="y ci" value="y">{{option_y}}</button>
+              <button id="z" type="submit" name="vote" class="z ci" value="z">{{option_z}}</button>
+          </div>
+        </form>
+         
+        <br><br><br>
+
+      </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+    {% if vote %}
+    <script>
+      var vote = "{{vote}}";
+
+      if(vote == "a"){
+        $(".a").prop('disabled', true);
+        $(".a").html('{{option_a}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "b"){
+        $(".b").prop('disabled', true);
+        $(".b").html('{{option_b}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "c"){
+        $(".c").prop('disabled', true);
+        $(".c").html('{{option_c}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "d"){
+        $(".d").prop('disabled', true);
+        $(".d").html('{{option_d}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "e"){
+        $(".e").prop('disabled', true);
+        $(".e").html('{{option_e}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "f"){
+        $(".f").prop('disabled', true);
+        $(".f").html('{{option_f}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "g"){
+        $(".g").prop('disabled', true);
+        $(".g").html('{{option_g}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "h"){
+        $(".h").prop('disabled', true);
+        $(".h").html('{{option_h}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "i"){
+        $(".i").prop('disabled', true);
+        $(".i").html('{{option_i}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "j"){
+        $(".j").prop('disabled', true);
+        $(".j").html('{{option_j}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "k"){
+        $(".k").prop('disabled', true);
+        $(".k").html('{{option_k}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "l"){
+        $(".l").prop('disabled', true);
+        $(".l").html('{{option_l}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "m"){
+        $(".m").prop('disabled', true);
+        $(".m").html('{{option_m}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "n"){
+        $(".n").prop('disabled', true);
+        $(".n").html('{{option_n}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "o"){
+        $(".o").prop('disabled', true);
+        $(".o").html('{{option_o}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "p"){
+        $(".p").prop('disabled', true);
+        $(".p").html('{{option_p}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "r"){
+        $(".r").prop('disabled', true);
+        $(".r").html('{{option_r}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "q"){
+        $(".q").prop('disabled', true);
+        $(".q").html('{{option_q}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "s"){
+        $(".s").prop('disabled', true);
+        $(".s").html('{{option_s}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "t"){
+        $(".t").prop('disabled', true);
+        $(".t").html('{{option_t}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "u"){
+        $(".u").prop('disabled', true);
+        $(".u").html('{{option_u}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "v"){
+        $(".v").prop('disabled', true);
+        $(".v").html('{{option_v}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "w"){
+        $(".w").prop('disabled', true);
+        $(".w").html('{{option_w}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "x"){
+        $(".x").prop('disabled', true);
+        $(".x").html('{{option_x}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "y"){
+        $(".y").prop('disabled', true);
+        $(".y").html('{{option_y}} <i class="fa fa-check-circle"></i>');
+      }
+      if(vote == "z"){
+        $(".z").prop('disabled', true);
+        $(".z").html('{{option_z}} <i class="fa fa-check-circle"></i>');
+      }
+    </script>
+    {% endif %}
+  </body>
+</html>
+
