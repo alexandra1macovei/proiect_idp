@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html ng-app="catsvsdogs">
+  <head>
+    <meta charset="utf-8">
+    <title>Statistici comenzi</title>
+    <base href="/index.html">
+    <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+    <meta name="keywords" content="docker-compose, docker, stack">
+    <meta name="author" content="Docker">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33%;
+  padding: 60px;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+  </head>
+  <body ng-controller="statsCtrl" >
+     <div id="background-stats">
+       <div id="background-stats-1">
+       </div><!--
+      --><div id="background-stats-2">
+      </div>
+      <div id="background-stats-3"></div>
+      <div id="background-stats-4"></div>
+      <div id="background-stats-5"></div>
+      <div id="background-stats-6"></div>
+      <div id="background-stats-7"></div>
+      <div id="background-stats-8"></div>
+      <div id="background-stats-9"></div>
+      <div id="background-stats-10"></div>
+      <div id="background-stats-11"></div>
+      <div id="background-stats-12"></div>
+      <div id="background-stats-13"></div>
+      <div id="background-stats-14"></div>
+      <div id="background-stats-15"></div>
+      <div id="background-stats-16"></div>
+      <div id="background-stats-17"></div>
+      <div id="background-stats-18"></div>
+      <div id="background-stats-19"></div>
+      <div id="background-stats-20"></div>
+      <div id="background-stats-21"></div>
+      <div id="background-stats-22"></div>
+      <div id="background-stats-23"></div>
+      <div id="background-stats-24"></div>
+      <div id="background-stats-25"></div>
+      <div id="background-stats-26"></div>
+    </div>
+  
+   <center>
+      <h2> Statistici comenzi</h2>
+      <h4> Procente comenzi pentru fiecare tip de mâncare <h4> </center>
+      <br>
+      <div class="row">
+         <div class="column" >
+        <p><b>Mic dejun</b></p>
+            <p>omleta cu oua si cascaval - {{aPercent | number:1}}%</p>
+            <p>omleta simpla - {{bPercent | number:1}}%</p>
+            <p>oua ochiuri cu bacon - {{cPercent | number:1}}%</p>
+            <p>paine prajita si cascaval pane - {{dPercent | number:1}}%</p>
+        </div>
+        <div class="column" >
+        <p><b> Masă principală </b></p>
+            <p>supa de pui a la grec - {{ePercent | number:1}}%</p>
+            <p>supa de pui - {{fPercent | number:1}}%</p>
+            <p>ciorba de perisoare - {{gPercent | number:1}}%</p>
+            <p>ciorba de burta - {{hPercent | number:1}}%</p>
+            <p>piept de pui cu cartofi prajiti - {{iPercent | number:1}}%</p>
+            <p>salata Caesar - {{jPercent | number:1}}%</p>
+            <p>pui Crispy cu cartofi prajiti - {{kPercent | number:1}}%</p>
+            <p>cartofi gratinati - {{lPercent | number:1}}%</p>
+            <p>salata greceasca - {{mPercent | number:1}}%</p>
+            <p>cartofi taranesti cu frigarui de pui - {{nPercent | number:1}}%</p>
+            <p>cartofi la cuptor cu pulpe de pui - {{oPercent | number:1}}%</p>
+        </div>
+        <div class="column" >
+        <p><b>Desert</b></p>
+            <p>tort Snickers - {{pPercent | number:1}}%</p>
+            <p>tarta cu mere - {{rPercent | number:1}}%</p>
+            <p>crema de zahar ars - {{qPercent | number:1}}%</p>
+            <p>papanasi - {{sPercent | number:1}}%</p>
+            <p>clatite cu dulceata - {{tPercent | number:1}}%</p>
+            <p>clatite cu finetti si topping de ciocolata - {{uPercent | number:1}}%</p>
+            <p>salata de fructe - {{vPercent | number:1}}%</p>
+            <p>mousse de ciocolata - {{wPercent | number:1}}%</p>
+            <p>cheesecake - {{xPercent | number:1}}%</p>
+            <p>orez cu lapte - {{yPercent | number:1}}%</p>
+            <p>tort de ciocolata - {{zPercent | number:1}}%</p>
+
+        </div>
+      </div>    
+    <div id="result">
+      <span ng-if="total == 0">Nicio comandă</span>
+      <span ng-if="total == 1">{{total}} comandă</span>
+      <span ng-if="total >= 2">{{total}} comenzi</span>
+    </div>
+    <script src="socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
